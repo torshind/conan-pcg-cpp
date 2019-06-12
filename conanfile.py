@@ -5,7 +5,8 @@ class PcgCppConan(ConanFile):
     name = "pcg-cpp"
     version = "latest"
     license = "MIT"
-    url = "http://www.pcg-random.org/"
+    homepage = "http://www.pcg-random.org/"
+    url = "https://github.com/torshind/conan-pcg-cpp/"
     description = "PCG — C++ Implementation"
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False]}
