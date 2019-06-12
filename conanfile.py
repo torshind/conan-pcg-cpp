@@ -13,14 +13,13 @@ class PcgCppConan(ConanFile):
     exports_sources = "*"
 
     def source(self):
-        git = tools.Git()
-        git.clone("https://github.com/imneme/pcg-cpp.git", "master")
+        self.run("git clone https://github.com/imneme/pcg-cpp.git")
 
     def build(self):
-        self.run("make test")
+        self.run("cd pcg-cpp && make test")
 
     def package(self):
-        self.copy("*.hpp", dst="include", src="include")
+        self.copy("*.hpp", dst="include", src="pcg-cpp/include")
 
     def package_info(self):
         self.info.header_only()
